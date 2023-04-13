@@ -8,8 +8,9 @@ draft: false
 images: []
 ---
 
-**Take notes for web pages and access them with a single click whenever you
-visit those web pages again. (Syncs to Google Drive)**
+<span style="font-weight:500">Take notes for web pages and access them with a
+single click whenever you visit those web pages again. (Syncs to Google
+Drive)</span>
 
 Ever needed to note down something about a webpage e.g. login id, frequent flyer
 number, membership number, tracking id etc. Something that you want to remember
