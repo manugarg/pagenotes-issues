@@ -2,11 +2,11 @@
 <section class="section section-sm">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-lg-10">
         <h1 class="mt-0"><img src="/icon_128.png" alt="Page Notes" style="height: 51px;padding-bottom: 5px;"/> {{ .Title }}</h1>
         {{- .Content -}}
       </div>
-      <div class="col col-lg-5">
+      <div class="col-lg-4">
         {{ $tpath := printf "testimonials.md" }}
         {{ if (fileExists $tpath) -}}
             {{ with .Site.GetPage $tpath }}
