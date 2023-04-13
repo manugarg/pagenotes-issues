@@ -1,0 +1,54 @@
+---
+title: "Page Notes"
+description: "An extension to take context-aware notes"
+lead: "A browser extension to take context-aware notes"
+date: 2020-10-06T08:47:36+00:00
+lastmod: 2020-10-06T08:47:36+00:00
+draft: false
+images: []
+---
+
+**Take notes for web pages and access them with a single click whenever you
+visit those web pages again. (Syncs to Google Drive)**
+
+Ever needed to note down something about a webpage e.g. login id, frequent flyer
+number, membership number, tracking id etc. Something that you want to remember
+when you visit that page again.
+
+Page notes lets you do that and much more in a slick way. Your notes can live in
+the cloud allowing you to be free of the device. It's secure: data stays in your
+browser and in your Google drive; you can encrypt your notes if you want that
+extra level of security. There's more. See below for full features list.
+
+### Install
+
+- Chromium based browsers: Chrome, Microsoft Edge, Opera, Brave, etc.
+  - [Chrome Web Store](https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla)
+- Firefox
+  - [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/mg-page-notes/)
+
+### Features
+
+- Take and access your notes with a single click.
+- Sync your notes to cloud (Google Drive). No data loss if your you lose your
+  local data for some reason.
+- Encrypt your note with a passphrase that is not stored anywhere. Unencrypted
+  notes and the passphrase are not stored anywhere.
+- Option to add website level page notes. Website level notes available for all
+  the pages of the website.
+- All notes also available through a single page to make it easy to search in
+  your notes. On all notes page, filter notes by tags. Tags are added to notes
+  by prefixing a word with '#'.
+- Browser icon changes color if there is a 'note' available for a web page.
+- Multiple computers can stay in sync using sync to cloud feature.
+- No 3rd party to trust. Data stays with the user -- either on the browser or
+  user's Google Account.
+
+### Bugs/Feature Requests
+
+- Please report bugs and feature requests here -
+  [Github Issues](https://github.com/manugarg/pagenotes-issues).
+- Discussion:
+  [Github](https://github.com/manugarg/pagenotes-issues/discussions),
+  [Slack](https://join.slack.com/t/pagenotes/shared_invite/zt-1syzqesjb-24bCr8y5UyRrVBEiCpBLAQ),
+  [Mailing list](mailto:pagenotes@googlegroups.com),
