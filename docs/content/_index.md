@@ -47,7 +47,7 @@ extra level of security. There's more. See below for full features list.
 ### Bugs/Feature Requests
 
 - Please report bugs and feature requests here -
-  [Github Issues](https://github.com/manugarg/pagenotes-issues).
+  [Github Issues](https://github.com/manugarg/pagenotes-issues/issues).
 - Discussion:
   [Github](https://github.com/manugarg/pagenotes-issues/discussions),
   [Slack](https://join.slack.com/t/pagenotes/shared_invite/zt-1syzqesjb-24bCr8y5UyRrVBEiCpBLAQ),
