@@ -23,10 +23,9 @@ extra level of security. There's more. See below for full features list.
 
 ### Install
 
-- Chromium based browsers: Chrome, Microsoft Edge, Opera, Brave, etc.
-  - [Chrome Web Store](https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla)
-- Firefox
-  - [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/mg-page-notes/)
+- [Chromium based browsers](https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla)
+  (Chrome, Microsoft Edge, Opera, Brave, etc.)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/mg-page-notes/)
 
 ### Features
 

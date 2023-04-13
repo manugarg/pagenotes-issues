@@ -58,10 +58,10 @@ defaultImage = "default-image.png" # put in `./assets/images/`
 fillImage = "1270x740 Center" # normalize image size
 
 # Footer
-footer = "Website powered by <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+footer = ""
 
 # Feed
-copyRight = "Copyright (c) 2016-2023 Manu Garg"
+copyRight = "Copyright (c) 2011-2023 Manu Garg"
 
 # Alert
 alert = false
