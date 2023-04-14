@@ -1,4 +1,4 @@
-baseurl = "https://cloudprober.org"
+baseurl = "https://pagenotes.manugarg.com"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
