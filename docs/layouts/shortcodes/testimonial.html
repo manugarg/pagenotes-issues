@@ -1,6 +1,9 @@
-<div class="card">
-  <div class="author d-flex align-items-center">{{.Get "author"}}:</div>
-  <blockquote class="blockquote text-right" style="font-size:1rem">
-    <p>{{.Inner}}</p>
-  </blockquote>
+<div class="card bg-light small">
+      <p class="p-2 font-italic">
+        "{{.Inner}}"
+      </p>
+      <footer class="blockquote-footer pt-1 border-top">
+        {{.Get "author"}}
+      </footer>
+    </p>
 </div>
