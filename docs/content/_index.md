@@ -8,7 +8,7 @@ draft: false
 images: []
 ---
 
-<p style="font-weight: bold; font-size: larger; padding:25px 0"><i>Take notes for web pages and access them with a single click whenever you
+<p style="font-weight: 500; font-size: larger; padding:25px 0"><i>Take notes for web pages and access them with a single click whenever you
 visit those web pages again.</i><br><small class="text-muted">(Syncs to Google Drive)</small></p>
 
 Ever needed to note down something about a webpage e.g. login id, frequent flyer
