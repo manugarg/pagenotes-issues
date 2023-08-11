@@ -18,24 +18,27 @@
   font-size: $font-size-base;
 }
 
-body {
-  font-size: 1.105rem;
-}
-
 li {
   padding: 4px 0;
 }
 
-.videowrapper {
-  float: none;
-  clear: both;
-  text-align: center;
-  width: 700px;
+.video-media-youtube-inner {
+  display: flex;
+}
+
+.video-media-youtube-inner-vi01 {
+  flex: 1;
+  overflow: hidden;
   position: relative;
-  padding-bottom: 52.25%;
-  padding-top: 25px;
+  padding-bottom: 56.25%;
   height: 0;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.video-media-youtube-inner-vi01 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

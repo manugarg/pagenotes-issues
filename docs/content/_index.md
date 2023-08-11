@@ -8,10 +8,16 @@ draft: false
 images: []
 ---
 
-<div style="font-style: italic; padding:5px 5px; margin-bottom: 20px; margin-top: 20px; font-weight:500"><i>Take notes for web pages and access them with a single click whenever you
-visit those web pages again.</i><br><small class="text-muted">(Syncs to Google Drive)</small></div>
+<div style="font-style: italic; padding:5px 5px; margin-bottom: 20px; margin-top: 20px; font-weight:500">Take notes for web pages and access them with a single click whenever you visit those web pages again.<br><small class="text-muted">(Syncs to Google Drive)</small></div>
 
-<div class="videowrapper "><iframe width="560" height="315" src="https://www.youtube.com/embed/ND8yNxlUfqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-media-youtube">
+  <div class="video-media-youtube-inner">
+    <div class="video-media-youtube-inner-vi01">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ND8yNxlUfqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<!-- <div class="videowrapper "><iframe width="560" height="315" src="https://www.youtube.com/embed/ND8yNxlUfqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div> -->
 
 Ever needed to note down something about a webpage e.g. login id, frequent flyer
 number, membership number, tracking id etc. Something that you want to remember
