@@ -1,0 +1,17 @@
+{{ define "sidebar-prefooter" }}
+<section class="section section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        {{- .Content -}}
+      </div>
+      <div class="col-lg-4">
+        {{ $tpath := printf "testimonials.md" }}
+        {{ if (fileExists $tpath) -}}
+            {{ with .Site.GetPage $tpath }}
+              {{ .Content }}
+            {{ end }}
+        {{- end }}
+      </div>
+    </div>
+{{ end }}
