@@ -25,6 +25,34 @@
   url = "/privacy.html"
   weight = 30
 
+[[main]]
+  name = "FAQs"
+  url = "/faq/"
+  weight = 40
+
+[[main]]
+  name = "Connect"
+  identifier = "connect"
+  weight = 50
+
+[[main]]
+  name = "Github"
+  parent = "connect"
+  url = "https://github.com/manugarg/pagenotes-issues/discussions"
+  weight = 10
+
+[[main]]
+  name = "Slack"
+  parent = "connect"
+  url = "https://join.slack.com/t/pagenotes/shared_invite/zt-1syzqesjb-24bCr8y5UyRrVBEiCpBLAQ"
+  weight = 20
+
+[[main]]
+  name = "Blog"
+  parent = "connect"
+  url = "https://medium.com/@manugarg/10-000-users-for-page-notes-1f75786c2a41"
+  weight = 30
+
 [[social]]
   name = "Slack"
   pre = '<svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.08 9C19.81 1.41 16.54-.35 9 1.92S-.35 7.46 1.92 15 7.46 24.35 15 22.08 24.35 16.54 22.08 9z"></path><line x1="12.57" y1="5.99" x2="16.15" y2="16.39"></line><line x1="7.85" y1="7.61" x2="11.43" y2="18.01"></line><line x1="16.39" y1="7.85" x2="5.99" y2="11.43"></line><line x1="18.01" y1="12.57" x2="7.61" y2="16.15"></line></svg>'
