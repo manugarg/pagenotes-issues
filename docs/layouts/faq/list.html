@@ -2,7 +2,7 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   {{ range .Pages }}
-    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <h3 id="{{ .RelPermalink | path.Base }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ .Content }}
   {{ end }}
 {{ end }}
