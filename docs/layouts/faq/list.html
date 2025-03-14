@@ -1,8 +1,31 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h3 id="{{ .RelPermalink | path.Base }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+<style>
+  /* We need this accommodate for the sticky header at the top. */
+  h3[id]::before {
+      content: '';
+      display: block;
+      height: 5rem;
+      margin: -5rem 0 0;
+  }
+</style>
+<div class="row justify-content-center">
+  <div class="col-md-12 col-lg-12 col-xl-12">
+    <h1>{{ .Title }}</h1>
     {{ .Content }}
-  {{ end }}
+    <nav aria-label="Table of Contents">
+      <ul>
+        {{ range .Pages }}
+          <li><a href="#{{ .RelPermalink | path.Base }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ range .Pages }}
+      <h3 id="{{ .RelPermalink | path.Base }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a> <a class=anchor href="#{{ .RelPermalink | path.Base }}" aria-label="Scroll to {{ .Title }}">#</a></h3>
+      {{ .Content }}
+      {{ if .Params.screenshots }}
+      <small><a href="{{ .RelPermalink | path.Base }}">Click to see screenshots</a></small>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
 {{ end }}
