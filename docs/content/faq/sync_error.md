@@ -19,7 +19,7 @@ should look at the debug info on the options page to figure out what's wrong.
 
 If you see a message like this:
 
-```
+```text
 Error: Error while refreshing access token! Status: 400
 ```
 
