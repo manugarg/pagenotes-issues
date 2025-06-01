@@ -93,6 +93,48 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.mobile-menu {
+  display: none;
+}
+/* Mobile-specific adjustments */
+@media  (max-width: 640px) {
+  .content-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  container-xxl {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .desktop-menu {
+    display: none;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-bg {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .hero-bg h1 {
+    font-size: 2rem; /* Reduced for mobile */
+  }
+  .hero-bg p {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .feature-card {
+    margin-bottom: 1rem;
+  }
+}
 p, code {
   margin-bottom: 1rem;
 }
