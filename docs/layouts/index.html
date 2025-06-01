@@ -1,17 +1,94 @@
-{{ define "sidebar-prefooter" }}
-<section class="section section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10">
-        {{- .Content -}}
-      </div>
-      <div class="col-lg-4">
-        {{ $tpath := printf "testimonials.md" }}
-        {{ if (fileExists $tpath) -}}
-            {{ with .Site.GetPage $tpath }}
-              {{ .Content }}
-            {{ end }}
-        {{- end }}
-      </div>
+{{ define "main" }}
+  <div class="content-wrapper">
+  <!-- Header -->
+  {{ partial "header/my-header.html" . }}    
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-12 mb-6">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4"> {{ .Params.hero.title }}</h1>
+      <p class="text-lg md:text-xl mb-8">{{ .Params.hero.subtitle }}<br></p>
+      <a href="https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla" class="bg-white text-blue-600 px-6 mx-2 py-3 rounded-full font-semibold hover:bg-gray-100">Install</a>
+      <a href="/faq" class="bg-white text-blue-600 px-6 mx-2 py-3 rounded-full font-semibold hover:bg-gray-100">FAQ</a>
     </div>
+  </section>
+
+  <section class="py-6 mb-6">
+    {{- .Content -}}
+  </section>
+
+    <!-- Features Section -->
+    <section id="features" class="px-3 py-6 mb-2 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose PageNotes?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Sync to Google Drive</h3>
+                <p class="text-gray-600">Never lose your notes and access them from any device.</p>
+              </div>
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Effortless Note-Taking</h3>
+                <p class="text-gray-600">Add notes to any web page and revisit them anytime you return.</p>
+              </div>
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Organize with Ease</h3>
+                <p class="text-gray-600">Tag and categorize your notes for quick access.</p>
+              </div>
+            </div>
+            <br/>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Encrypt Notes</h3>
+                <p class="text-gray-600">Encrypted your notes with a passphrase for added security.</p>
+              </div>
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">No 3rd Party</h3>
+                <p class="text-gray-600">Data stays with the user -- either on the browser or user's Google Account.</p>
+              </div>
+              <div class="feature-card bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Easy backup and restore</h3>
+                <p class="text-gray-600">Take a backup of your notes and restore them when you need to.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="px-3 py-6 bg-gray-50 mb-2">
+      <div class="mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-6">See PageNotes in Action</h2>
+        <div class="video-container mx-auto max-w-4xl">
+          <iframe src="https://www.youtube.com/embed/ND8yNxlUfqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    
+    <section id="testimonials" class="px-3 py-6 bg-gray-50 mb-2">
+        <h2 class="text-3xl font-bold text-center mb-6"id=testimonials>What users say <a href=#testimonials class=anchor aria-hidden=true>#</a></h2>
+        <p class="text-center mt-0 mb-6">(From <a href=https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla class="underline decoration-sky-600">Chrome Web Store</a> reviews)</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {{ range .Params.testimonials }}
+        <div class="feature-card bg-white p-6 rounded-lg shadow">
+          <h5 class="mt-0">
+            ⭐⭐⭐⭐⭐
+          </h5>          
+          <p class="mb-2">{{ .content }}</p>
+          <footer>- <i>{{ .author }}</i></footer>
+        </div>
+        {{ end }}
+        </div>
+    </section>
+
+    <!-- Bugs/Feature Requests Section -->
+    <section id="bugsfeature-requests" class="px-3 py-6 bg-gray-50 mb-2">
+      <h2 class="text-3xl font-bold mb-6"id=bugsfeature-requests>Bugs/Feature Requests <a href=#bugsfeature-requests class=anchor aria-hidden=true>#</a><h2>
+      <ul class="list-disc list-inside">
+        <li>Please report bugs and feature requests here - <a class="underline decoration-blue-600 hover:text-blue-600" href=https://github.com/manugarg/pagenotes-issues/issues>Github Issues</a>.</li>
+        <li>Discussion:
+        <a class="underline decoration-blue-600 hover:text-blue-600" href=https://github.com/manugarg/pagenotes-issues/discussions>Github</a>,
+        <a class="underline decoration-blue-600 hover:text-blue-600" href=https://join.slack.com/t/pagenotes/shared_invite/zt-1syzqesjb-24bCr8y5UyRrVBEiCpBLAQ>Slack</a>,
+        <a class="underline decoration-blue-600 hover:text-blue-600" href="/cdn-cgi/l/email-protection#2e5e4f494b40415a4b5d6e49414149424b495c415b5e5d004d4143">Mailing list</a></li>
+      </ul>          
+  </section>
+</div>
 {{ end }}
