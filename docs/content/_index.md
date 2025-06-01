@@ -8,7 +8,7 @@ draft: false
 images: []
 hero:
   title: 'PageNotes: Your personal web whisperer'
-  subtitle: 'Take notes for web pages and immediately access them whenever you visit those web pages again.'
+  subtitle: 'Take notes for web pages and quickly access them whenever you visit those web pages again.'
 testimonials:
   - author: "Henry Rundkvist"
     content: "Tried 20+ extension for onsite notes, this is the best in Chrome Web Store"
