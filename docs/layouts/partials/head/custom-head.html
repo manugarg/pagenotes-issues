@@ -9,71 +9,97 @@
     dataLayer.push(arguments);
   }
   gtag('js', new Date());
-
   gtag('config', 'G-G7JEL0BW75');
 </script>
 
-<!-- Old analytics id, remove once GA4 property looks good. -->
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    (i[r] =
-      i[r] ||
-      function () {
-        (i[r].q = i[r].q || []).push(arguments);
-      }),
-      (i[r].l = 1 * new Date());
-    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
-  })(
-    window,
-    document,
-    'script',
-    'https://www.google-analytics.com/analytics.js',
-    'ga'
-  );
-  /* General initialization */
-  ga('create', 'UA-79661-6', 'auto');
-  ga('set', 'anonymizeIp', true);
-  ga('send', 'pageview');
-  /* Track outbound links */
-  var buttons = document.querySelectorAll('a');
-  Array.prototype.map.call(buttons, function (item) {
-    if (item.host != document.location.host) {
-      item.addEventListener('click', function () {
-        var action = item.getAttribute('data-action') || 'follow';
-        ga('send', 'event', 'outbound', action, item.href);
-      });
-    }
-  });
-  /* Register handler to log search on blur */
-  var query = document.querySelector('.query');
-  if (query) {
-    query.addEventListener('blur', function () {
-      if (this.value) {
-        var path = document.location.pathname;
-        ga('send', 'pageview', path + '?q=' + this.value);
-      }
-    });
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PageNotes",
+  "description": "A browser extension to take notes on any webpage. Notes appear automatically when you revisit the page.",
+  "url": "https://pagenotes.manugarg.com",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome, Firefox, Edge, Brave, Opera",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Manu Garg",
+    "url": "https://manugarg.com"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "ratingCount": "95",
+    "bestRating": "5"
   }
-</script>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<style>
-.hero-bg {
-  background: linear-gradient(135deg, #6B7280, #3B82F6);
 }
+</script>
+
+<!-- Inter Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<style>
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero */
+.hero-bg {
+  background: linear-gradient(135deg, #1E3A5F, #2563EB, #6366F1);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Hero fade-in animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-fade {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+.hero-fade-1 { animation-delay: 0.1s; }
+.hero-fade-2 { animation-delay: 0.25s; }
+.hero-fade-3 { animation-delay: 0.4s; }
+.hero-fade-4 { animation-delay: 0.55s; }
+
+/* Feature cards */
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
+/* Video */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 90%;
@@ -87,42 +113,87 @@
   width: 100%;
   height: 100%;
 }
+
+/* Content wrapper */
 .content-wrapper {
-  max-width: 1280px; /* Matches Tailwind's max-w-5xl */
+  max-width: 1280px;
   width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.mobile-menu {
+
+/* Section fade-in on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile hamburger menu */
+.mobile-menu-btn {
   display: none;
 }
-/* Mobile-specific adjustments */
-@media  (max-width: 640px) {
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 50;
+    padding: 1rem 0;
+  }
+  .mobile-nav.open {
+    display: block;
+  }
+  .mobile-nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .mobile-nav a:hover {
+    background: #f3f4f6;
+    color: #2563EB;
+  }
   .content-wrapper {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
   .container-xxl {
-    padding-left: 0rem;
-    padding-right: 0rem;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .desktop-menu {
-    display: none;
-  }
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
   .hero-bg {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
   .hero-bg h1 {
-    font-size: 2rem; /* Reduced for mobile */
+    font-size: 2rem;
   }
   .hero-bg p {
     font-size: 1rem;
@@ -135,6 +206,86 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Section eyebrow */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2563EB;
+  margin-bottom: 0.5rem;
+}
+
+/* Step number circles */
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2563EB;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Icon wrapper */
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+.icon-circle svg {
+  width: 24px;
+  height: 24px;
+  color: #2563EB;
+}
+
+/* Avatar initials */
+.avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2563EB;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Community card link */
+a.community-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.community-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Install card */
+.install-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.install-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
 p, code {
   margin-bottom: 1rem;
 }
@@ -145,3 +296,20 @@ code {
   font-size: 14px;
 }
 </style>
+
+<!-- Scroll animations -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in-section').forEach(function(el) {
+    observer.observe(el);
+  });
+});
+</script>

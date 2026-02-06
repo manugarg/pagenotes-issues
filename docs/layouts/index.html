@@ -1,89 +1,214 @@
 {{ define "main" }}
   <div class="content-wrapper">
   <!-- Header -->
-  {{ partial "header/my-header.html" . }}    
+  {{ partial "header/my-header.html" . }}
+
   <!-- Hero Section -->
-  <section class="hero-bg text-white py-12 mb-6 rounded-xl">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4"> {{ .Params.hero.title }}</h1>
-      <p class="text-lg md:text-xl mb-16">{{ .Params.hero.subtitle }}<br></p>
-      <a href="https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla" class="bg-white text-blue-600 px-6 mx-2 py-3 rounded-full font-semibold hover:bg-gray-100">Install</a>
-      <a href="https://pagenotes.app" class="bg-white text-blue-600 px-6 mx-2 py-3 rounded-full font-semibold hover:bg-gray-100">Web App</a>
+  <section class="hero-bg text-white py-16 md:py-24 mb-6 rounded-xl">
+    <div class="container mx-auto px-6 text-center" style="position: relative; z-index: 1;">
+      <p class="hero-fade hero-fade-1 text-sm md:text-base font-medium tracking-wide mb-4" style="opacity: 0.85;">Browser Extension for Chrome, Firefox, Edge &amp; More</p>
+      <h1 class="hero-fade hero-fade-2 text-4xl md:text-6xl font-bold mb-6">{{ .Params.hero.title }}</h1>
+      <p class="hero-fade hero-fade-3 text-lg md:text-xl mb-10 max-w-2xl mx-auto" style="opacity: 0.9;">{{ .Params.hero.subtitle }}</p>
+      <div class="hero-fade hero-fade-4 flex justify-center items-center gap-4 hero-buttons">
+        <a href="#install" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Install Free</a>
+        <a href="https://pagenotes.app" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:bg-opacity-10 transition">Try Web App</a>
+      </div>
     </div>
   </section>
 
-  <section class="py-6 mb-6">
+  <!-- Body content -->
+  <section class="py-6 mb-6 text-center max-w-3xl mx-auto">
     {{- .Content -}}
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="px-3 py-6 mb-2 bg-gray-50">
-    <h2 class="text-3xl font-bold text-center mb-12">Why Choose PageNotes?</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
+  <section id="features" class="fade-in-section px-3 py-12 mb-2 bg-gray-50 rounded-xl">
+    <div class="text-center mb-10">
+      <span class="section-eyebrow">Features</span>
+      <h2 class="text-3xl font-bold mb-3">Why Choose PageNotes?</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Everything you need to stay organized while browsing the web.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <!-- Sync to Google Drive -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.338-2.32 3.75 3.75 0 013.547 5.345A3.75 3.75 0 0117.25 19.5H6.75z" /></svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Sync to Google Drive</h3>
         <p class="text-gray-600">Notes sync to your Google Drive automatically once you set it up. Never lose your notes and access them from any device.</p>
       </div>
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
+      <!-- Secure -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Secure</h3>
-        <p class="text-gray-600">Data stays with the user -- either on the browser or user's Google Account. No 3rd party to trust. You can also encrypt your notes with a passphrase for added security.</p>
+        <p class="text-gray-600">Data stays with you — on your browser or Google Account. No 3rd party to trust. Encrypt notes with a passphrase for added security.</p>
       </div>
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
+      <!-- Organize -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Organize with Ease</h3>
         <p class="text-gray-600">Find all your notes through an all notes page. Use tags or lightning fast search to find notes quickly.</p>
       </div>
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
-        <h3 class="text-xl font-semibold mb-2">Easy backup and restore</h3>
+      <!-- Backup -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Easy Backup and Restore</h3>
         <p class="text-gray-600">Take a backup of your notes and restore them when you need to.</p>
       </div>
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
+      <!-- Web App -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Web App</h3>
-        <p class="text-gray-600">Access your notes even without the extension, using web app at <a href="https://pagenotes.app" class="underline decoration-blue-600 hover:text-blue-600">pagenotes.app</a>.</p>
+        <p class="text-gray-600">Access your notes even without the extension, using the web app at <a href="https://pagenotes.app" class="underline decoration-blue-600 hover:text-blue-600">pagenotes.app</a>.</p>
       </div>
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
+      <!-- Multi Browser -->
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L12 12.75 6.429 9.75m11.142 0l4.179 2.25-9.75 5.25-9.75-5.25 4.179-2.25" /></svg>
+        </div>
         <h3 class="text-xl font-semibold mb-2">Multi Browser Support</h3>
         <p class="text-gray-600">Works on all Chrome based browsers (including Microsoft Edge, Opera, Brave, etc.) and Firefox.</p>
       </div>
     </div>
   </section>
 
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="fade-in-section px-3 py-12 mb-2">
+    <div class="text-center mb-10">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="text-3xl font-bold mb-3">Get Started in 3 Simple Steps</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+      <div class="flex flex-col items-center">
+        <div class="step-number mb-4">1</div>
+        <h3 class="text-lg font-semibold mb-2">Install the Extension</h3>
+        <p class="text-gray-600">One click install from the Chrome Web Store or Firefox Add-ons.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="step-number mb-4">2</div>
+        <h3 class="text-lg font-semibold mb-2">Write a Note</h3>
+        <p class="text-gray-600">Click the PageNotes icon on any webpage and type your note.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="step-number mb-4">3</div>
+        <h3 class="text-lg font-semibold mb-2">See It When You Return</h3>
+        <p class="text-gray-600">Your notes appear automatically when you revisit the page.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Video Section -->
-  <section id="video" class="px-3 py-6 bg-gray-50 mb-2">
+  <section id="video" class="fade-in-section px-3 py-12 bg-gray-50 mb-2 rounded-xl">
     <div class="mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-6">See PageNotes in Action</h2>
+      <div class="text-center mb-8">
+        <span class="section-eyebrow">Demo</span>
+        <h2 class="text-3xl font-bold mb-3">See PageNotes in Action</h2>
+      </div>
       <div class="video-container mx-auto max-w-4xl">
         <iframe src="https://www.youtube.com/embed/ND8yNxlUfqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </section>
-  
-  <section id="testimonials" class="px-3 py-6 bg-gray-50 mb-2">
-      <h2 class="text-3xl font-bold text-center mb-6"id=testimonials>What users say <a href=#testimonials class=anchor aria-hidden=true>#</a></h2>
-      <p class="text-center mt-0 mb-6">(From <a href=https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla class="underline decoration-sky-600">Chrome Web Store</a> reviews)</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
+  <!-- Install Section -->
+  <section id="install" class="fade-in-section px-3 py-12 mb-2">
+    <div class="text-center mb-10">
+      <span class="section-eyebrow">Install</span>
+      <h2 class="text-3xl font-bold mb-3">Get PageNotes for Your Browser</h2>
+      <p class="text-gray-500">Free and open source. Available for all major browsers.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+      <!-- Chrome -->
+      <a href="https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla" class="install-card bg-white p-8 rounded-xl border border-gray-100 text-center block" style="text-decoration: none; color: inherit;">
+        <div class="flex justify-center mb-4">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+            <circle cx="24" cy="24" r="8" fill="#4285F4"/>
+            <path d="M24 16a8 8 0 0 1 6.928 4H37.6A16 16 0 0 0 8.4 14l6.528 11.304A8 8 0 0 1 24 16z" fill="#EA4335"/>
+            <path d="M30.928 20A8 8 0 0 1 24 32a8.001 8.001 0 0 1-6.928-4L10.4 14a16 16 0 0 0 13.6 26 16 16 0 0 0 13.6-8.4L30.928 20z" fill="#34A853"/>
+            <path d="M17.072 28A8 8 0 0 1 24 16a8.001 8.001 0 0 1 6.928 4l6.672-11.6A16 16 0 0 0 24 8a16 16 0 0 0-13.6 7.6L17.072 28z" fill="#FBBC05" opacity="0"/>
+            <path d="M17.072 28a8 8 0 0 1 0-8L10.4 8.4A16 16 0 0 0 8 24a16 16 0 0 0 2.4 8.4L17.072 28z" fill="#FBBC05"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Chrome Web Store</h3>
+        <p class="text-gray-500 text-sm">Also works on Edge, Brave, Opera</p>
+      </a>
+      <!-- Firefox -->
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/page-notes-web-ext/" class="install-card bg-white p-8 rounded-xl border border-gray-100 text-center block" style="text-decoration: none; color: inherit;">
+        <div class="flex justify-center mb-4">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+            <path d="M35 16c-1-3-3.5-5.5-5-6.5.8 1.8 1 3.3.8 4.5-.3-1.5-1.8-3.2-3.5-4.5-2.5-1.8-5-1.5-6-1 2.5 1 4 3 4.5 5-2-.8-4-.5-5.5.5-2 1.3-3 3.5-3 5.8 0 6.5 5.5 11.7 12.2 11.7S41.7 26.5 41 20c-.3-1.5-1-3-2.5-4h-.5c-.5 0-1.5.5-2.5 1.5-.8.8-1 1.8-.5 2.5s1.2.8 2 .5c-.3 1.5-1.5 2.5-3 2.5-2 0-3.5-1.5-3.5-3.5 0-1 .5-2 1-2.5 1-1 2-1.5 3.5-1.5 1 0 2 .5 3 1z" fill="#FF7139"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Firefox Add-ons</h3>
+        <p class="text-gray-500 text-sm">For Firefox browser</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="fade-in-section px-3 py-12 bg-gray-50 mb-2 rounded-xl">
+    <div class="text-center mb-10">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="text-3xl font-bold mb-3">What Users Say</h2>
+      <p class="text-gray-500">From <a href="https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla" class="underline decoration-sky-600 hover:text-blue-600">Chrome Web Store</a> reviews</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {{ range .Params.testimonials }}
-      <div class="feature-card bg-white p-6 rounded-lg shadow">
-        <h5 class="mt-0">
-          ⭐⭐⭐⭐⭐
-        </h5>          
-        <p class="mb-2">{{ .content }}</p>
-        <footer>- <i>{{ .author }}</i></footer>
+      <div class="feature-card bg-white p-6 rounded-xl border border-gray-100">
+        <div class="mb-3" style="color: #F59E0B;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="mb-4 italic text-gray-700">&ldquo;{{ .content }}&rdquo;</p>
+        <div class="flex items-center gap-3">
+          <div class="avatar-initials">{{ slicestr .author 0 1 }}</div>
+          <span class="font-medium text-gray-800">{{ .author }}</span>
+        </div>
       </div>
       {{ end }}
-      </div>
+    </div>
   </section>
 
-  <!-- Bugs/Feature Requests Section -->
-  <section id="bugsfeature-requests" class="px-3 py-6 bg-gray-50 mb-2">
-    <h2 class="text-3xl font-bold mb-6"id=bugsfeature-requests>Bugs/Feature Requests <a href=#bugsfeature-requests class=anchor aria-hidden=true>#</a><h2>
-    <ul class="list-disc list-inside">
-      <li>Please report bugs and feature requests here - <a class="underline decoration-blue-600 hover:text-blue-600" href=https://github.com/manugarg/pagenotes-issues/issues>Github Issues</a>.</li>
-      <li>Discussion:
-      <a class="underline decoration-blue-600 hover:text-blue-600" href=https://github.com/manugarg/pagenotes-issues/discussions>Github</a>,
-      <a class="underline decoration-blue-600 hover:text-blue-600" href=https://join.slack.com/t/pagenotes/shared_invite/zt-37kf5dx5g-o2nIFAn1r5MtUOHyefWaWg>Slack</a>,
-      <a class="underline decoration-blue-600 hover:text-blue-600" href="/cdn-cgi/l/email-protection#2e5e4f494b40415a4b5d6e49414149424b495c415b5e5d004d4143">Mailing list</a></li>
-    </ul>          
+  <!-- Community & Support Section -->
+  <section id="support" class="fade-in-section px-3 py-12 mb-2">
+    <div class="text-center mb-10">
+      <span class="section-eyebrow">Community</span>
+      <h2 class="text-3xl font-bold mb-3">Get Help &amp; Share Ideas</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <!-- Report Issues -->
+      <a href="https://github.com/manugarg/pagenotes-issues/issues" class="community-card feature-card bg-white p-6 rounded-xl border border-gray-100 text-center">
+        <div class="icon-circle mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Report Issues</h3>
+        <p class="text-gray-500 text-sm">Found a bug? Let us know on GitHub.</p>
+      </a>
+      <!-- Discussions -->
+      <a href="https://github.com/manugarg/pagenotes-issues/discussions" class="community-card feature-card bg-white p-6 rounded-xl border border-gray-100 text-center">
+        <div class="icon-circle mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Discussions</h3>
+        <p class="text-gray-500 text-sm">Share ideas and feature requests.</p>
+      </a>
+      <!-- Slack -->
+      <a href="https://join.slack.com/t/pagenotes/shared_invite/zt-37kf5dx5g-o2nIFAn1r5MtUOHyefWaWg" class="community-card feature-card bg-white p-6 rounded-xl border border-gray-100 text-center">
+        <div class="icon-circle mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Chat on Slack</h3>
+        <p class="text-gray-500 text-sm">Join the community conversation.</p>
+      </a>
+    </div>
   </section>
-</div>
+
+  </div>
 {{ end }}

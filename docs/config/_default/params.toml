@@ -1,10 +1,10 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Page Notes"
+title = "PageNotes"
 titleSeparator = "-"
-titleAddition = "Take notes for web pages and access them with a single click whenever you visit those web pages again."
-description = "Take notes for web pages and access them with a single click whenever you visit those web pages again. (Syncs to Google Drive)"
+titleAddition = "Take notes on any webpage and find them instantly when you return"
+description = "PageNotes is a browser extension that lets you take notes on any webpage. Notes appear automatically when you revisit the page. Syncs via Google Drive. Available for Chrome, Firefox, Edge, and more."
 googleAnalytics = 'G-G7JEL0BW75'
 
 ## Open Graph
@@ -13,12 +13,12 @@ domainTLD = "manugarg.com"
 titleHome = "Page Notes"
 
 ## Twitter Cards
-twitterSite = "@cloudprober"
+twitterSite = "@manugarg"
 twitterCreator = "@manugarg"
 
 ## JSON-LD
 schemaType = "Organization"
-schemaName = "manugarg"
+schemaName = "PageNotes"
 schemaAuthor = "Manu Garg"
 schemaAuthorTwitter = "https://twitter.com/manugarg"
 schemaAuthorLinkedIn = "https://www.linkedin.com/in/manugarg/"
@@ -61,7 +61,7 @@ fillImage = "1270x740 Center" # normalize image size
 footer = ""
 
 # Feed
-copyRight = "Copyright (c) 2011-2023 Manu Garg"
+copyRight = "Copyright (c) 2011-2025 Manu Garg"
 
 # Alert
 alert = false

@@ -1,20 +1,66 @@
-<header class="bg-white sticky top-0 z-50">
+<header class="bg-white sticky top-0 z-50" style="position: relative;">
     <nav class="mx-auto py-4 flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <a href="/" aria-label="Page Notes"><img src="/icon_128.png" alt="PageNotes Logo" class="w-8 h-8"></a>
         <a href="/" aria-label="Page Notes" class="no-decoration text-decoration-none"><span class="text-2xl font-bold text-gray-800">PageNotes</span></a>
       </div>
+
+      <!-- Desktop nav -->
       <div class="desktop-menu">
-      <div class="space-x-4 flex items-center">
-        <a href="/#features" class="text-gray-600 hover:text-blue-600">Features</a>
-        <a href="/#testimonials" class="text-gray-600 hover:text-blue-600">Testimonials</a>
-        <a href="/#bugsfeature-requests" class="text-gray-600 hover:text-blue-600">Support</a>
-        <a href="/faq" class="text-gray-600 hover:text-blue-600">FAQ</a>
-        <a href="https://chrome.google.com/webstore/detail/page-notes/omjdheidbhoghpfdnndkgoelfiogjfla" class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 cta-button">Install Now</a>
+        <div class="space-x-4 flex items-center">
+          <a href="/#features" class="text-gray-600 hover:text-blue-600">Features</a>
+          <a href="/#how-it-works" class="text-gray-600 hover:text-blue-600">How It Works</a>
+          <a href="/#testimonials" class="text-gray-600 hover:text-blue-600">Testimonials</a>
+          <a href="/faq" class="text-gray-600 hover:text-blue-600">FAQ</a>
+          <a href="/#install" class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 cta-button">Install Now</a>
+        </div>
       </div>
-      </div>
-      <div class="mobile-menu">
-        <a href="/faq" class="text-gray-600 hover:text-blue-600">FAQ</a>&nbsp;&nbsp;
+
+      <!-- Mobile hamburger button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <!-- Hamburger icon -->
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <!-- Close icon (hidden by default) -->
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="24" height="24" style="display:none;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Mobile nav dropdown -->
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="/#features">Features</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/faq">FAQ</a>
+        <a href="/#install" style="color: #2563EB; font-weight: 600;">Install Now</a>
       </div>
     </nav>
   </header>
+
+  <script>
+  (function() {
+    var btn = document.getElementById('mobile-menu-btn');
+    var nav = document.getElementById('mobile-nav');
+    var hamburger = document.getElementById('hamburger-icon');
+    var closeIcon = document.getElementById('close-icon');
+
+    btn.addEventListener('click', function() {
+      var isOpen = nav.classList.toggle('open');
+      hamburger.style.display = isOpen ? 'none' : 'block';
+      closeIcon.style.display = isOpen ? 'block' : 'none';
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a link is clicked
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        nav.classList.remove('open');
+        hamburger.style.display = 'block';
+        closeIcon.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>

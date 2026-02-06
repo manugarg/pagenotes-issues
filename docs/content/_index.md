@@ -1,14 +1,14 @@
 ---
-title: "Page Notes"
-description: "An extension to take context-aware notes"
-lead: "A browser extension to take context-aware notes"
+title: "PageNotes"
+description: "A browser extension to take notes on any webpage"
+lead: "Take notes on any webpage and find them instantly when you return"
 date: 2020-10-06T08:47:36+00:00
 lastmod: 2020-10-06T08:47:36+00:00
 draft: false
 images: []
 hero:
-  title: 'PageNotes: Your personal web whisperer'
-  subtitle: 'Take notes for web pages and quickly access them whenever you visit those web pages again.'
+  title: 'Your Notes, Right Where You Need Them'
+  subtitle: 'Take notes on any webpage and see them instantly when you return. Simple, private, and synced across your devices.'
 testimonials:
   - author: "Henry Rundkvist"
     content: "Tried 20+ extension for onsite notes, this is the best in Chrome Web Store"
@@ -23,6 +23,4 @@ testimonials:
   - author: "Pedro"
     content: "Simple and effective. Just what I needed."
 ---
-Ever needed to note down something about a webpage e.g. login id, frequent flyer
-number, membership number, tracking id etc. Something that you want to remember
-when you visit that page again. Page notes lets you do that and much more in a slick way.
+Whether it's a login ID, a membership number, a tracking code, or just a quick reminder — PageNotes lets you attach notes directly to any webpage. When you come back, your notes are already there waiting for you.
