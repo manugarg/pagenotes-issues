@@ -25,6 +25,7 @@ if (suggestions !== null) { document.addEventListener('click', function(event) {
   }
 
 });
+}
 
 /*
 Source:
