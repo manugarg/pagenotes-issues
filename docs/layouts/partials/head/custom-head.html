@@ -50,9 +50,13 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <style>
-/* Smooth scroll */
+/* Smooth scroll and prevent horizontal overflow */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
 }
 
 /* Hero */
@@ -120,6 +124,8 @@ html {
   width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Section fade-in on scroll */
@@ -275,6 +281,28 @@ a.community-card {
 a.community-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* FAQ nav link highlight */
+.faq-nav-link {
+  background: #EFF6FF;
+  color: #2563EB !important;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1.5px solid #BFDBFE;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.faq-nav-link:hover {
+  background: #DBEAFE;
+  border-color: #93C5FD;
+  color: #1D4ED8 !important;
+}
+.faq-nav-link-mobile {
+  color: #2563EB !important;
+  font-weight: 600 !important;
+  border-left: 3px solid #2563EB;
 }
 
 /* Install card */

@@ -1,21 +1,181 @@
 /** Custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Force Font Family */
+body,
+.font-sans,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+div {
+  font-family: 'Inter', "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', 'Inter', "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+
 ::selection {
-  background: rgba(118, 215, 254, 0.2);
+  background: rgba(79, 70, 229, 0.2); // Indigo selection
 }
 
-.header-bar {
-  border-top: 0px;
-  border-image-source: none;
-  border-image-slice: 0;
+/* Glassmorphism Header */
+header.glass-header {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  transition: all 0.3s ease;
 }
 
-.home h1 {
-  font-size: calc(1.625rem + 1.3vw);
+[data-theme="dark"] header.glass-header {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Premium Mesh Gradient Hero Sections */
+.hero-bg {
+  position: relative !important;
+  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 50%, #312e81 100%) !important;
+  overflow: hidden !important;
+  color: #ffffff !important;
+}
+
+.hero-bg * {
+  -webkit-text-fill-color: initial !important;
+  background-clip: padding-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.15), transparent 25%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-bg>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-bg h1 {
+  font-size: calc(2.2rem + 1.8vw);
+  /* Larger, more impactful */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="dark"] .hero-bg h1 {
+  color: #ffffff;
+}
+
+.hero-bg p {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .hero-bg p {
+  color: #e2e8f0 !important;
+}
+
+/* Soft Edge Buttons */
+.btn {
+  border-radius: 9999px;
+  /* Pill shape */
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23);
+}
+
+/* Premium Component Depth (Cards/Features) */
+.card,
+.feature-box,
+.feature-card,
+.install-card,
+.community-card,
+.home section .row>div {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s ease !important;
+}
+
+.home section .row>div {
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card:hover,
+.feature-box:hover,
+.feature-card:hover,
+.install-card:hover,
+.community-card:hover,
+.home section .row>div:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(79, 70, 229, 0.2) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .feature-box,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .install-card,
+[data-theme="dark"] .community-card,
+[data-theme="dark"] .home section .row>div {
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .feature-box:hover,
+[data-theme="dark"] .feature-card:hover,
+[data-theme="dark"] .install-card:hover,
+[data-theme="dark"] .community-card:hover,
+[data-theme="dark"] .home section .row>div:hover {
+  border-color: rgba(99, 102, 241, 0.4) !important;
 }
 
 .alert {
   font-family: $font-family-base;
   font-size: $font-size-base;
+  border-radius: 12px;
+  border: none;
 }
 
 li {
