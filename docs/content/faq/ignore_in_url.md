@@ -9,6 +9,8 @@ screenshots:
   - src: ignore-in-url-per-site.png
     title: 'Ignore in URL per site setting'
 ---
+**Note:** YouTube URLs are always handled correctly regardless of this setting. Page Notes automatically normalizes YouTube URLs to ensure notes are saved and retrieved consistently.
+
 You can configure Page Notes to ignore certain parts of the URL, e.g. query parameters and hash, while saving and retrieving notes by changing the "Ignore in URL" setting in the options page. This setting has 3 possible values:
 | Value | Description |
 | --- | --- |
