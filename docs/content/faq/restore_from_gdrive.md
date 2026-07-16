@@ -11,7 +11,7 @@ your notes file. You can use this to recover lost or overwritten notes.
 1. Open [pagenotes.data in Google Drive](https://drive.google.com/drive/search?q=pagenotes.data).
 2. Click the context menu (three dots on the right side):
 
-   <img width="2794" height="118" alt="Context menu showing three-dot menu for pagenotes.data" src="https://github.com/user-attachments/assets/41b2d222-abff-4f2f-b0a2-5059f28e945c" />
+   <img width="2794" height="118" alt="Context menu showing three-dot menu for pagenotes.data" src="/screenshots/gdrive-context-menu.png" />
 
 3. Select **File Information** → **Manage Versions**.
 4. Pick the version you'd like to restore. Versions are listed by date and
